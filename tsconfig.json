@@ -2,12 +2,11 @@
   "extends": "@stackra/typescript-config/base",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": ".",
-    "types": ["node", "vitest/globals"],
+    "rootDir": "./src",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "__tests__/**/*"],
-  "exclude": ["node_modules", "dist", "config", ".examples"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "__tests__"]
 }
