@@ -1,0 +1,23 @@
+# Do not ship source files
+src
+**/*.test.*
+**/*.spec.*
+__tests__/
+
+# Tooling / config
+*.config.js
+*.config.cjs
+*.config.mjs
+*.config.ts
+jest.config.*
+tsconfig.json
+tsconfig.*.json
+.vscode/
+.github/
+.storybook/
+
+# Local / dev artifacts
+node_modules
+coverage
+*.log
+.env*
