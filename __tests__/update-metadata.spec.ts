@@ -17,7 +17,7 @@ describe('updateMetadata', () => {
       const target = {};
       const metadataKey = 'new-key';
       const defaultValue = 'default-value';
-      const callback = jest.fn().mockReturnValue('created-value');
+      const callback = vi.fn().mockReturnValue('created-value');
 
       // Verify no metadata exists initially
       expect(hasMetadata(metadataKey, target)).toBe(false);
@@ -46,7 +46,7 @@ describe('updateMetadata', () => {
       const existingValue = 'existing-value';
       const updatedValue = 'updated-value';
 
-      const callback = jest.fn().mockReturnValue(updatedValue);
+      const callback = vi.fn().mockReturnValue(updatedValue);
 
       // Set up existing metadata
       defineMetadata(metadataKey, existingValue, target);
@@ -83,7 +83,7 @@ describe('updateMetadata', () => {
         // Set up existing falsy metadata
         defineMetadata(key, existing, target);
 
-        const callback = jest.fn().mockReturnValue(expected);
+        const callback = vi.fn().mockReturnValue(expected);
 
         // Act: Update the falsy metadata
         updateMetadata(key, defaultValue, callback, target);
@@ -416,7 +416,7 @@ describe('updateMetadata', () => {
       defineMetadata(metadataKey, existingValue, target);
 
       // Act & Assert: Callback that throws should propagate the error
-      const errorCallback = jest.fn().mockImplementation(() => {
+      const errorCallback = vi.fn().mockImplementation(() => {
         throw new Error('Callback error');
       });
 
@@ -555,7 +555,7 @@ describe('updateMetadata', () => {
       defineMetadata(metadataKey, existingValue, target);
 
       // Act: Callback returns undefined
-      const undefinedCallback = jest.fn().mockReturnValue(undefined);
+      const undefinedCallback = vi.fn().mockReturnValue(undefined);
       updateMetadata(metadataKey, defaultValue, undefinedCallback, target);
 
       // Assert: Metadata should be set to undefined
