@@ -1,9 +1,9 @@
 {
-  // Extends base: strict, ES2022, decorators, JSX, Node types, etc.
   "extends": "@stackra/typescript-config/base",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": ".",
+    "types": ["node", "vitest/globals"],
     "paths": {
       "@/*": ["./src/*"]
     }
